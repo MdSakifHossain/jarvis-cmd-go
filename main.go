@@ -20,6 +20,8 @@ func main() {
 		cmd.ShowVersion()
 	case "lights":
 		cmd.Lights(args[1:])
+	case "unlock":
+		cmd.Unlock()
 	case "banner":
 		cmd.Banner()
 	default:

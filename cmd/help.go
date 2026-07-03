@@ -16,7 +16,7 @@ Usage:
 
 Available commands:
 
-    help, version, lights
+    help, version, lights, unlock
 
 For more info, Run:
 

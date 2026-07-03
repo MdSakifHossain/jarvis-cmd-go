@@ -6,18 +6,20 @@ import (
 	"os/exec"
 )
 
-func requireCommand(cmd, hint string) {
-	if _, err := exec.LookPath(cmd); err != nil {
-		console.Fail(fmt.Sprintf(
-			"Missing dependency: %s\n\n%s",
-			cmd,
-			hint,
-		))
+func RequireCommand(cmd, hint string) {
+	if _, err := exec.LookPath(cmd); err == nil {
+		return
 	}
+
+	if hint == "" {
+		hint = "No installation instructions provided."
+	}
+
+	console.Fail(fmt.Sprintf(`Missing dependency: %s\n\n%s`, cmd, hint))
 }
 
 func RequireOpenRGB() {
-	requireCommand(
+	RequireCommand(
 		"openrgb",
 		`Install OpenRGB from:
 
@@ -28,11 +30,11 @@ Linux amd64 (Debian Bookworm .deb)`,
 	)
 }
 
-// func requireDBus() {
-// 	requireCommand(
-// 		"dbus-send",
-// 		`Install it with:
+func RequireDBus() {
+	RequireCommand(
+		"dbus-send",
+		`Install with:
 
-// sudo apt install dbus-x11`,
-// 	)
-// }
+sudo apt install dbus-x11`,
+	)
+}
