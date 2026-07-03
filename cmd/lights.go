@@ -38,9 +38,9 @@ Usage:
 
 Available Commands:
 
-    on        Turn on RAM LED
-    off       Turn off RAM LED
-    help      Show help
+    ? on        Turn on RAM LED
+    ? off       Turn off RAM LED
+    ✔ help      Show help
 
 `, config.AppName)
 }
