@@ -2,12 +2,13 @@ package cmd
 
 import (
 	"fmt"
+	"jarvis/console"
 	"os/exec"
 )
 
 func requireCommand(cmd, hint string) {
 	if _, err := exec.LookPath(cmd); err != nil {
-		fail(fmt.Sprintf(
+		console.Fail(fmt.Sprintf(
 			"Missing dependency: %s\n\n%s",
 			cmd,
 			hint,

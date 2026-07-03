@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"jarvis/banner"
 	"jarvis/config"
+	"jarvis/console"
 	"os/exec"
 )
 
@@ -46,18 +47,18 @@ func lightsOn() {
 	requireOpenRGB()
 
 	showHeader(banner.Lights)
-	fmt.Println("Turning lights ON...")
+	console.Info("Turning lights ON...")
 	setLights("ffffff")
-	fmt.Println("Done.")
+	console.Info("Done.")
 }
 
 func lightsOff() {
 	requireOpenRGB()
 
 	showHeader(banner.Lights)
-	fmt.Println("Turning lights OFF...")
+	console.Info("Turning lights OFF...")
 	setLights("000000")
-	fmt.Println("Done.")
+	console.Info("Done.")
 }
 
 func setLights(color string) {
@@ -68,6 +69,6 @@ func setLights(color string) {
 	)
 
 	if err := cmd.Run(); err != nil {
-		fail(fmt.Sprintf("OpenRGB failed: %v", err))
+		console.Fail(fmt.Sprintf("OpenRGB failed: %v", err))
 	}
 }
