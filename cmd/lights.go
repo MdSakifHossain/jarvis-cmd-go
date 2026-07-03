@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 	"jarvis/banner"
-	"jarvis/config"
 	"jarvis/console"
+	"jarvis/meta"
 	"jarvis/support"
 	"os/exec"
 )
@@ -41,7 +41,7 @@ Available Commands:
     off       Turn off RAM LED
     help      Show help
 
-`, config.AppName)
+`, meta.AppName)
 }
 
 func lightsOn() {

@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"jarvis/config"
+	"jarvis/meta"
 )
 
 func ShowVersion() {
-	fmt.Printf("%v v%v\n", config.AppName, config.Version)
+	fmt.Printf("%v v%v\n", meta.AppName, meta.Version)
 }

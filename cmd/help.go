@@ -3,7 +3,6 @@ package cmd
 import (
 	"fmt"
 	"jarvis/banner"
-	"jarvis/config"
 	"jarvis/meta"
 	"jarvis/support"
 )
@@ -20,10 +19,10 @@ Usage:
 Available commands:
 
 `,
-		config.AppName,
-		config.Version,
-		config.ShortDescription,
-		config.AppName,
+		meta.AppName,
+		meta.Version,
+		meta.ShortDescription,
+		meta.AppName,
 	)
 
 	for _, command := range meta.Commands {
@@ -38,6 +37,6 @@ For more info, Run:
     %s [command] help
 
 `,
-		config.AppName,
+		meta.AppName,
 	)
 }

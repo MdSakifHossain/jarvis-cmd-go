@@ -5,6 +5,10 @@ type Command struct {
 	Description string
 }
 
+const AppName = "jarvis"
+const Version = "0.6.1"
+const ShortDescription = "Personal CLI Tool"
+
 var Commands = []Command{
 	{"help", "Show help information"},
 	{"version", "Show application version"},
