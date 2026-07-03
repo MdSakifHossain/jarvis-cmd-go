@@ -1,6 +1,7 @@
 package main
 
 import (
+	"jarvis/banner"
 	"jarvis/cmd"
 	"os"
 )
@@ -20,8 +21,16 @@ func main() {
 		cmd.ShowVersion()
 	case "lights":
 		cmd.Lights(args[1:])
+	case "banner":
+		banner.Jarvis()
+		banner.Lights()
+		banner.Lock()
+		banner.Unlock()
+		banner.Power()
+		banner.Tree()
+		banner.NmHunter()
+		banner.Bkash()
 	default:
-		// cmd.ShowHelp()
-		HiBitch()
+		cmd.ShowHelp()
 	}
 }

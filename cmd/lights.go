@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"jarvis/banner"
 	"jarvis/config"
 )
 
@@ -27,8 +28,9 @@ func Lights(args []string) {
 }
 
 func showLightsHelp() {
-	fmt.Printf(`
-Change Color of RAM LED
+	fmt.Println("")
+	banner.Lights()
+	fmt.Printf(`Change Color of RAM LED
 
 Usage:
 
