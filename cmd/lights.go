@@ -5,6 +5,7 @@ import (
 	"jarvis/banner"
 	"jarvis/config"
 	"jarvis/console"
+	"jarvis/support"
 	"os/exec"
 )
 
@@ -27,7 +28,7 @@ func Lights(args []string) {
 }
 
 func showLightsHelp() {
-	showHeader(banner.Lights)
+	support.ShowHeader(banner.Lights)
 	fmt.Printf(`Change Color of RAM LED
 
 Usage:
@@ -44,18 +45,18 @@ Available Commands:
 }
 
 func lightsOn() {
-	requireOpenRGB()
+	support.RequireOpenRGB()
 
-	showHeader(banner.Lights)
+	support.ShowHeader(banner.Lights)
 	console.Info("Turning lights ON...")
 	setLights("ffffff")
 	console.Info("Done.")
 }
 
 func lightsOff() {
-	requireOpenRGB()
+	support.RequireOpenRGB()
 
-	showHeader(banner.Lights)
+	support.ShowHeader(banner.Lights)
 	console.Info("Turning lights OFF...")
 	setLights("000000")
 	console.Info("Done.")

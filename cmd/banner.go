@@ -1,14 +1,17 @@
 package cmd
 
-import "jarvis/banner"
+import (
+	"jarvis/banner"
+	"jarvis/support"
+)
 
 func Banner() {
-	showHeader(banner.Jarvis)
-	showHeader(banner.Lights)
-	showHeader(banner.Lock)
-	showHeader(banner.Unlock)
-	showHeader(banner.Power)
-	showHeader(banner.Tree)
-	showHeader(banner.NmHunter)
-	showHeader(banner.Bkash)
+	support.ShowHeader(banner.Jarvis)
+	support.ShowHeader(banner.Lights)
+	support.ShowHeader(banner.Lock)
+	support.ShowHeader(banner.Unlock)
+	support.ShowHeader(banner.Power)
+	support.ShowHeader(banner.Tree)
+	support.ShowHeader(banner.NmHunter)
+	support.ShowHeader(banner.Bkash)
 }

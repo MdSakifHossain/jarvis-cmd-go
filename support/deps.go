@@ -1,4 +1,4 @@
-package cmd
+package support
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ func requireCommand(cmd, hint string) {
 	}
 }
 
-func requireOpenRGB() {
+func RequireOpenRGB() {
 	requireCommand(
 		"openrgb",
 		`Install OpenRGB from:
