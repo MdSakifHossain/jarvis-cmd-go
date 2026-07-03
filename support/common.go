@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func ShowHeader(banner func()) {
+func ShowBanner(banner func()) {
 	fmt.Println()
 	banner()
 	fmt.Println()

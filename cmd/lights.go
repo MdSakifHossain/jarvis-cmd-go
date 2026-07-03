@@ -28,7 +28,7 @@ func Lights(args []string) {
 }
 
 func showLightsHelp() {
-	support.ShowHeader(banner.Lights)
+	support.ShowBanner(banner.Lights)
 	fmt.Printf(`Change Color of RAM LED
 
 Usage:
@@ -47,7 +47,7 @@ Available Commands:
 func lightsOn() {
 	support.RequireOpenRGB()
 
-	support.ShowHeader(banner.Lights)
+	support.ShowBanner(banner.Lights)
 	console.Info("Turning lights ON...")
 	setLights("ffffff")
 	console.Info("Done.")
@@ -56,7 +56,7 @@ func lightsOn() {
 func lightsOff() {
 	support.RequireOpenRGB()
 
-	support.ShowHeader(banner.Lights)
+	support.ShowBanner(banner.Lights)
 	console.Info("Turning lights OFF...")
 	setLights("000000")
 	console.Info("Done.")

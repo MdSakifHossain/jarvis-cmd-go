@@ -6,12 +6,12 @@ import (
 )
 
 func Banner() {
-	support.ShowHeader(banner.Jarvis)
-	support.ShowHeader(banner.Lights)
-	support.ShowHeader(banner.Lock)
-	support.ShowHeader(banner.Unlock)
-	support.ShowHeader(banner.Power)
-	support.ShowHeader(banner.Tree)
-	support.ShowHeader(banner.NmHunter)
-	support.ShowHeader(banner.Bkash)
+	support.ShowBanner(banner.Jarvis)
+	support.ShowBanner(banner.Lights)
+	support.ShowBanner(banner.Lock)
+	support.ShowBanner(banner.Unlock)
+	support.ShowBanner(banner.Power)
+	support.ShowBanner(banner.Tree)
+	support.ShowBanner(banner.NmHunter)
+	support.ShowBanner(banner.Bkash)
 }

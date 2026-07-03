@@ -9,18 +9,11 @@ import (
 )
 
 func Lock() {
-	showLockHeader()
-
+	support.ShowBanner(banner.Lock)
 	console.Info("Initializing command...")
 	console.Info("Locking screen...")
-
 	lockScreen()
-
 	console.Info("Command finished successfully.")
-}
-
-func showLockHeader() {
-	support.ShowHeader(banner.Lock)
 }
 
 func lockScreen() {

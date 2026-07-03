@@ -9,18 +9,11 @@ import (
 )
 
 func Unlock() {
-	showUnlockHeader()
-
+	support.ShowBanner(banner.Unlock)
 	console.Info("Initializing command...")
 	console.Info("Unlocking screen...")
-
 	unlockScreen()
-
 	console.Info("Command finished successfully.")
-}
-
-func showUnlockHeader() {
-	support.ShowHeader(banner.Unlock)
 }
 
 func unlockScreen() {
