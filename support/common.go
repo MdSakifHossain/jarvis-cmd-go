@@ -7,4 +7,5 @@ import (
 func ShowHeader(banner func()) {
 	fmt.Println()
 	banner()
+	fmt.Println()
 }
