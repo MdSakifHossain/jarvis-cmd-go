@@ -31,7 +31,6 @@ Available commands:
 
 	fmt.Printf(
 		`
-
 For more info, Run:
 
     %s [command] help

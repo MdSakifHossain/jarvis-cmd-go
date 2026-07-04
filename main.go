@@ -24,6 +24,8 @@ func main() {
 		cmd.Lock()
 	case "unlock":
 		cmd.Unlock()
+	case "table":
+		cmd.Table(args[1:])
 	case "banner":
 		cmd.Banner()
 	default:
