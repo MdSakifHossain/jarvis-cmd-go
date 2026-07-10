@@ -10,7 +10,6 @@ func Info(message string) {
 }
 
 func Fail(message string) {
-	fmt.Fprintln(os.Stderr)
 	fmt.Fprintln(os.Stderr, message)
 	os.Exit(1)
 }
