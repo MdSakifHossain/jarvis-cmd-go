@@ -30,6 +30,8 @@ func main() {
 		cmd.Observe()
 	case "power":
 		cmd.Power()
+	case "tree":
+		cmd.Tree()
 	case "banner":
 		cmd.Banner()
 	default:

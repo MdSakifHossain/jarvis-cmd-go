@@ -18,6 +18,15 @@ func requireCommand(cmd, hint string) {
 	output.Fail(fmt.Sprintf("Missing dependency: %s\n\n%s", cmd, hint))
 }
 
+func RequireTree() {
+	requireCommand(
+		"tree",
+		`Install Tree:
+
+    sudo apt install tree -y
+`)
+}
+
 func RequireOpenRGB() {
 	requireCommand(
 		"openrgb",
