@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 	"jarvis/banner"
-	"jarvis/console"
 	"jarvis/meta"
+	"jarvis/output"
 	"jarvis/support"
 	"os/exec"
 )
@@ -48,18 +48,18 @@ func lightsOn() {
 	support.RequireOpenRGB()
 
 	support.ShowBanner(banner.Lights)
-	console.Info("Turning lights ON...")
+	output.Info("Turning lights ON...")
 	setLights("ffffff")
-	console.Info("Done.")
+	output.Info("Done.")
 }
 
 func lightsOff() {
 	support.RequireOpenRGB()
 
 	support.ShowBanner(banner.Lights)
-	console.Info("Turning lights OFF...")
+	output.Info("Turning lights OFF...")
 	setLights("000000")
-	console.Info("Done.")
+	output.Info("Done.")
 }
 
 func setLights(color string) {
@@ -70,6 +70,6 @@ func setLights(color string) {
 	)
 
 	if err := cmd.Run(); err != nil {
-		console.Fail(fmt.Sprintf("OpenRGB failed: %v", err))
+		output.Fail(fmt.Sprintf("OpenRGB failed: %v", err))
 	}
 }

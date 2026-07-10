@@ -3,17 +3,17 @@ package cmd
 import (
 	"fmt"
 	"jarvis/banner"
-	"jarvis/console"
+	"jarvis/output"
 	"jarvis/support"
 	"os/exec"
 )
 
 func Lock() {
 	support.ShowBanner(banner.Lock)
-	console.Info("Initializing command...")
-	console.Info("Locking screen...")
+	output.Info("Initializing command...")
+	output.Info("Locking screen...")
 	lockScreen()
-	console.Info("Command finished successfully.")
+	output.Info("Command finished successfully.")
 }
 
 func lockScreen() {
@@ -30,6 +30,6 @@ func lockScreen() {
 	)
 
 	if err := cmd.Run(); err != nil {
-		console.Fail(fmt.Sprintf("Failed to lock screen: %v", err))
+		output.Fail(fmt.Sprintf("Failed to lock screen: %v", err))
 	}
 }

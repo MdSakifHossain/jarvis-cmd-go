@@ -3,17 +3,17 @@ package cmd
 import (
 	"fmt"
 	"jarvis/banner"
-	"jarvis/console"
+	"jarvis/output"
 	"jarvis/support"
 	"os/exec"
 )
 
 func Unlock() {
 	support.ShowBanner(banner.Unlock)
-	console.Info("Initializing command...")
-	console.Info("Unlocking screen...")
+	output.Info("Initializing command...")
+	output.Info("Unlocking screen...")
 	unlockScreen()
-	console.Info("Command finished successfully.")
+	output.Info("Command finished successfully.")
 }
 
 func unlockScreen() {
@@ -31,6 +31,6 @@ func unlockScreen() {
 	)
 
 	if err := cmd.Run(); err != nil {
-		console.Fail(fmt.Sprintf("Failed to unlock screen: %v", err))
+		output.Fail(fmt.Sprintf("Failed to unlock screen: %v", err))
 	}
 }

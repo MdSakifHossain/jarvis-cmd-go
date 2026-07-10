@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"jarvis/banner"
-	"jarvis/console"
+	"jarvis/output"
 	"jarvis/support"
 	"strconv"
 )
@@ -21,7 +21,7 @@ func Table(args []string) {
 
 	number, err := strconv.Atoi(args[0])
 	if err != nil {
-		console.Fail("Number must be an integer.")
+		output.Fail("Number must be an integer.")
 	}
 
 	limit := 10
@@ -29,7 +29,7 @@ func Table(args []string) {
 	if len(args) > 1 {
 		limit, err = strconv.Atoi(args[1])
 		if err != nil {
-			console.Fail("Limit must be an integer.")
+			output.Fail("Limit must be an integer.")
 		}
 	}
 

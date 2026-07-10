@@ -2,7 +2,7 @@ package support
 
 import (
 	"fmt"
-	"jarvis/console"
+	"jarvis/output"
 	"os/exec"
 )
 
@@ -15,7 +15,7 @@ func RequireCommand(cmd, hint string) {
 		hint = "No installation instructions provided."
 	}
 
-	console.Fail(fmt.Sprintf(`Missing dependency: %s\n\n%s`, cmd, hint))
+	output.Fail(fmt.Sprintf(`Missing dependency: %s\n\n%s`, cmd, hint))
 }
 
 func RequireOpenRGB() {
