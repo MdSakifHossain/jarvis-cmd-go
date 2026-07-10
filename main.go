@@ -26,6 +26,8 @@ func main() {
 		cmd.Unlock()
 	case "table":
 		cmd.Table(args[1:])
+	case "observe":
+		cmd.Observe()
 	case "banner":
 		cmd.Banner()
 	default:

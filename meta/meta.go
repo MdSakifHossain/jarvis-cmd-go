@@ -6,7 +6,7 @@ type Command struct {
 }
 
 const AppName = "jarvis"
-const Version = "0.7.0"
+const Version = "0.8.0"
 const ShortDescription = "Personal CLI Tool"
 
 var Commands = []Command{
@@ -16,4 +16,5 @@ var Commands = []Command{
 	{"lock", "Lock the screen"},
 	{"unlock", "Unlock the screen"},
 	{"table", "Show a multiplication table"},
+	{"observe", "Show live log file of Vault Observer"},
 }
