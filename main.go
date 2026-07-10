@@ -28,6 +28,8 @@ func main() {
 		cmd.Table(args[1:])
 	case "observe":
 		cmd.Observe()
+	case "power":
+		cmd.Power()
 	case "banner":
 		cmd.Banner()
 	default:
