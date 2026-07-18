@@ -36,6 +36,8 @@ func main() {
 		cmd.Banner()
 	case "attendance":
 		cmd.Attendance()
+	case "ph":
+		cmd.PH()
 	default:
 		cmd.ShowHelp()
 	}
