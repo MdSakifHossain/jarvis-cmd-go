@@ -38,6 +38,8 @@ func main() {
 		cmd.Attendance()
 	case "ph":
 		cmd.PH()
+	case "nmhunt":
+		cmd.NMHunter(args[1:])
 	default:
 		cmd.ShowHelp()
 	}
