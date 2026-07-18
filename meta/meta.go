@@ -6,7 +6,7 @@ type Command struct {
 }
 
 const AppName = "jarvis"
-const Version = "0.11.0"
+const Version = "0.12.0"
 const ShortDescription = "Personal CLI Tool"
 
 var Commands = []Command{
@@ -20,4 +20,5 @@ var Commands = []Command{
 	{"power", "Turn off PC's Power"},
 	{"tree", "Same as original but with extra flags"},
 	{"ph", "Scaffold new module of PH with correct Connection"},
+	{"Attendance", "Create an Attendance Sheet on current dir"},
 }
