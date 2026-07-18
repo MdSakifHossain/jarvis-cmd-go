@@ -40,6 +40,8 @@ func main() {
 		cmd.PH()
 	case "nmhunt":
 		cmd.NMHunter(args[1:])
+	case "bkash":
+		cmd.BKash(args[1:])
 	default:
 		cmd.ShowHelp()
 	}
