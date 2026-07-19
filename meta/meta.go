@@ -1,12 +1,14 @@
 package meta
 
+import "sort"
+
 type Command struct {
 	Name        string
 	Description string
 }
 
 const AppName = "jarvis"
-const Version = "0.14.0"
+const Version = "0.15.0"
 const ShortDescription = "Personal CLI Tool"
 
 var Commands = []Command{
@@ -22,5 +24,11 @@ var Commands = []Command{
 	{"ph", "Scaffold new module of PH with correct Connection"},
 	{"attendance", "Create an Attendance Sheet on current dir"},
 	{"nmhunt", "Runs Node_Modules hunter"},
-	{"bkash", "Do Bkash and other MFS Calculations"},
+	{"bkash", "Bkash and other MFS Calculations"},
+}
+
+func init() {
+	sort.Slice(Commands, func(i, j int) bool {
+		return Commands[i].Name < Commands[j].Name
+	})
 }

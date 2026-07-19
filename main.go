@@ -32,8 +32,6 @@ func main() {
 		cmd.Power()
 	case "tree":
 		cmd.Tree()
-	case "banner":
-		cmd.Banner()
 	case "attendance":
 		cmd.Attendance()
 	case "ph":

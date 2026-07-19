@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"jarvis/banner"
 	"jarvis/output"
 	"jarvis/support"
 	"os"
@@ -10,7 +9,6 @@ import (
 )
 
 func Tree() {
-	support.ShowBanner(banner.Tree)
 	support.RequireTree()
 	cmd := exec.Command("tree", "--gitignore", "--dirsfirst")
 	// telling command to output the commands output and error on the terminal

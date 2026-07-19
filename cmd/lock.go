@@ -2,14 +2,12 @@ package cmd
 
 import (
 	"fmt"
-	"jarvis/banner"
 	"jarvis/output"
 	"jarvis/support"
 	"os/exec"
 )
 
 func Lock() {
-	support.ShowBanner(banner.Lock)
 	output.Info("Initializing command...")
 	output.Info("Locking screen...")
 	lockScreen()

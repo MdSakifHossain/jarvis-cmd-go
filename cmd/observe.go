@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"jarvis/banner"
 	"jarvis/output"
 	"jarvis/support"
 	"os"
@@ -11,8 +10,6 @@ import (
 )
 
 func Observe() {
-	showObserveHeader()
-
 	home, err := os.UserHomeDir()
 	if err != nil {
 		output.Fail(fmt.Sprintf("Failed to determine home directory: %v", err))
@@ -31,8 +28,4 @@ func Observe() {
 	if err := cmd.Run(); err != nil {
 		output.Fail(fmt.Sprintf("Failed to observe log: %v", err))
 	}
-}
-
-func showObserveHeader() {
-	support.ShowBanner(banner.Vault)
 }

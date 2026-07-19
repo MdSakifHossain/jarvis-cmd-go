@@ -2,9 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"jarvis/banner"
 	"jarvis/output"
-	"jarvis/support"
 	"strconv"
 )
 
@@ -33,20 +31,12 @@ func Table(args []string) {
 		}
 	}
 
-	showTableBanner()
-
 	for i := 1; i <= limit; i++ {
 		fmt.Printf("%4d × %-2d = %d\n", number, i, number*i)
 	}
 }
 
-func showTableBanner() {
-	support.ShowBanner(banner.Table)
-}
-
 func showTableHelp() {
-	showTableBanner()
-
 	fmt.Println(`Show a multiplication table.
 
 Usage:

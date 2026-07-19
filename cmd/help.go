@@ -2,13 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"jarvis/banner"
 	"jarvis/meta"
-	"jarvis/support"
 )
 
 func ShowHelp() {
-	support.ShowBanner(banner.Jarvis)
 	fmt.Printf(
 		`%s - v%s - %s
 

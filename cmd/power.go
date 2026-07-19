@@ -1,14 +1,11 @@
 package cmd
 
 import (
-	"jarvis/banner"
 	"jarvis/output"
-	"jarvis/support"
 	"os/exec"
 )
 
 func Power() {
-	support.ShowBanner(banner.Power)
 	output.Info("Initializing command...")
 	output.Info("Shutting down...")
 
