@@ -171,6 +171,16 @@
     {
       "name": "help",
       "description": "Show help"
+    },
+
+    {
+      "name": "ph",
+      "description": "Scaffold new module of PH with correct Connection"
+    },
+
+    {
+      "name": "table",
+      "description": "Show a multiplication table"
     }
   ]
 }
