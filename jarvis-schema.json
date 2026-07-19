@@ -1,0 +1,176 @@
+{
+  "_comment": "Jarvis CLI — completion schema. Edit this file and re-run generate-completions.py to update tab completions.",
+  "_version": "1.0.0",
+
+  "name": "jarvis",
+  "description": "Personal CLI Tool",
+
+  "commands": [
+    {
+      "name": "lights",
+      "description": "Control RAM LED lighting",
+      "subcommands": [
+        { "name": "on", "description": "Turn RAM LED on (white)" },
+        { "name": "off", "description": "Turn RAM LED off" },
+        { "name": "help", "description": "Show lights help" }
+      ]
+    },
+
+    {
+      "name": "lock",
+      "description": "Lock the screen (optional delay in minutes)",
+      "arguments": [
+        {
+          "name": "delay",
+          "description": "Minutes before locking (0 = immediate)",
+          "type": "number",
+          "optional": true,
+          "suggestions": ["1", "2", "5", "10", "15", "30", "45", "60"]
+        }
+      ]
+    },
+
+    {
+      "name": "unlock",
+      "description": "Unlock the screen"
+    },
+
+    {
+      "name": "observe",
+      "description": "Tail the vault observer log in real time"
+    },
+
+    {
+      "name": "tree",
+      "description": "Show directory tree (respects .gitignore)"
+    },
+
+    {
+      "name": "power",
+      "description": "Shut down the machine immediately"
+    },
+
+    {
+      "name": "attendance",
+      "description": "Generate a Markdown attendance sheet for a month"
+    },
+
+    {
+      "name": "nmhunt",
+      "description": "Find and delete node_modules directories recursively",
+      "arguments": [
+        {
+          "name": "directory",
+          "description": "Directory to scan (default: ~/projects)",
+          "type": "path",
+          "optional": true
+        }
+      ]
+    },
+
+    {
+      "name": "bkash",
+      "description": "bKash MFS calculator (cashout, sendmoney, cashin)",
+      "subcommands": [
+        {
+          "name": "cashout",
+          "description": "Cash out calculator",
+          "subcommands": [
+            {
+              "name": "from",
+              "description": "You have X — how much do you receive?",
+              "arguments": [
+                {
+                  "name": "amount",
+                  "description": "Your wallet balance in BDT",
+                  "type": "number",
+                  "optional": false
+                },
+                {
+                  "name": "rate",
+                  "description": "Cash out charge per 1000 BDT (default: 18.5)",
+                  "type": "number",
+                  "optional": true,
+                  "suggestions": ["14.9", "18.5", "20.0"]
+                }
+              ]
+            },
+            {
+              "name": "for",
+              "description": "You want X in hand — what balance do you need?",
+              "arguments": [
+                {
+                  "name": "amount",
+                  "description": "Amount you want to receive in BDT",
+                  "type": "number",
+                  "optional": false
+                },
+                {
+                  "name": "rate",
+                  "description": "Cash out charge per 1000 BDT (default: 18.5)",
+                  "type": "number",
+                  "optional": true,
+                  "suggestions": ["14.9", "18.5", "20.0"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "sendmoney",
+          "description": "Sender must have X — send money calculator",
+          "arguments": [
+            {
+              "name": "amount",
+              "description": "Amount to receive in BDT",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "name": "rate",
+              "description": "Cash out charge per 1000 BDT (default: 18.5)",
+              "type": "number",
+              "optional": true,
+              "suggestions": ["14.9", "18.5", "20.0"]
+            }
+          ]
+        },
+
+        {
+          "name": "cashin",
+          "description": "Alias for sendmoney — send money calculator",
+          "arguments": [
+            {
+              "name": "amount",
+              "description": "Amount to receive in BDT",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "name": "rate",
+              "description": "Cash out charge per 1000 BDT (default: 18.5)",
+              "type": "number",
+              "optional": true,
+              "suggestions": ["14.9", "18.5", "20.0"]
+            }
+          ]
+        },
+        {
+          "name": "help",
+          "description": "Show bkash help"
+        }
+      ]
+    },
+
+    {
+      "name": "version",
+      "description": "Show jarvis version"
+    },
+
+    {
+      "name": "help",
+      "description": "Show help"
+    }
+  ]
+}
