@@ -25,7 +25,7 @@ package cmd
 //
 // Notes on numbers:
 //   - Milestone is a whole number and may be 0 or negative (e.g. -1, 0, 3).
-//   - Module may be a decimal (e.g. 6, 6.5) and must be greater than 0.
+//   - Module may be a decimal and may also be 0 or negative (e.g. 6, 6.5, 0, -1).
 //   - Videos is the count of videos and must be a positive whole number.
 //
 // Wire this into your command dispatcher the same way as attendance, table,
@@ -49,7 +49,7 @@ import (
 // phConfig holds everything collected from either the prompts or the flags.
 type phConfig struct {
 	Milestone   int     // may be 0 or negative
-	Module      float64 // may be a decimal, must be > 0
+	Module      float64 // may be a decimal, may be 0 or negative
 	Videos      int     // positive count
 	Destination string  // absolute path to the Programming_Hero vault root
 }
@@ -119,7 +119,7 @@ func phHasFlags(args []string) bool {
 func phParseFlags(args []string) phConfig {
 	fs := flag.NewFlagSet("ph", flag.ExitOnError)
 	milestoneStr := fs.String("milestone", "", "milestone number (whole number, may be 0 or negative)")
-	moduleStr := fs.String("module", "", "module number (e.g. 6 or 6.5, must be > 0)")
+	moduleStr := fs.String("module", "", "module number (e.g. 6, 6.5, 0, or -1)")
 	videosStr := fs.String("videos", "", "number of videos (positive whole number)")
 	destination := fs.String("destination", "", "absolute path to the vault root")
 
@@ -138,10 +138,7 @@ func phParseFlags(args []string) phConfig {
 
 	module, err := strconv.ParseFloat(*moduleStr, 64)
 	if err != nil {
-		output.Fail(fmt.Sprintf("invalid --module %q: must be a number, e.g. 6 or 6.5", *moduleStr))
-	}
-	if module <= 0 {
-		output.Fail(fmt.Sprintf("invalid --module %q: must be greater than 0", *moduleStr))
+		output.Fail(fmt.Sprintf("invalid --module %q: must be a number, e.g. 6, 6.5, 0, or -1", *moduleStr))
 	}
 
 	videos, err := strconv.Atoi(*videosStr)
@@ -204,7 +201,7 @@ func phPromptMilestone(reader *bufio.Reader) int {
 	}
 }
 
-// phPromptModule asks for a number greater than 0, decimals allowed.
+// phPromptModule asks for a number, decimals allowed (0 and negatives are fine).
 func phPromptModule(reader *bufio.Reader) float64 {
 	for {
 		output.Info("Module:")
@@ -213,8 +210,8 @@ func phPromptModule(reader *bufio.Reader) float64 {
 		line = strings.TrimSpace(line)
 
 		n, err := strconv.ParseFloat(line, 64)
-		if err != nil || n <= 0 {
-			output.Info("Please enter a number greater than 0 (e.g. 6 or 6.5).")
+		if err != nil {
+			output.Info("Please enter a number (e.g. 6, 6.5, 0, or -1).")
 			output.Info("")
 			continue
 		}
